@@ -24,7 +24,7 @@ resource "kubernetes_deployment" "simpleapp" {
 
       spec {
         container {
-          image = "jjjje/test:latest"
+          image = "jjjje/test:da56cb5595e21bc1e388b9cd285f9a604b91afe2"
           name  = "simpleapp"
           env {
             name = "MY_ENV_VAR"
@@ -61,6 +61,7 @@ resource "kubernetes_service" "simpleapp" {
     port {
       port        = 5000
       target_port = 5000
+      node_port   = 8080
     }
 
     type = "NodePort"
